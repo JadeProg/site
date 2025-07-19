@@ -10,6 +10,13 @@ html {
     margin: 0px auto;
 }
 
+#prof-pic {
+  width: 200px; /* ajuste para o tamanho do video */
+  border-radius: 50%; /* se quiser arredondado como antes */
+  display: block;
+  margin: 0 auto;
+}
+
 body {
     width: 100%;
     height: 100%;
@@ -497,7 +504,7 @@ a.active {
     background: url(../img/mountain-dusk.jpg);
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-repeat: no-repeat;
     background-color: #ff9669;
     color: #000;
