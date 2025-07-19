@@ -499,7 +499,7 @@ a.active {
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-color: #000;
+    background-color: #ff9669;
     color: #000;
 }
 
@@ -775,13 +775,12 @@ a.fa.fa-angle-down:focus {
     height: 175px;
     line-height: 175px;
     max-width: 100%;
-    background: #00009C;
+    background: #b86b14;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -o-border-radius: 50%;
     border-radius: 50%;
-    display;
-    block;
+    display: block;
     color: #FFF;
     font-size: 55px;
     text-align: center;
@@ -1468,7 +1467,7 @@ a.resume-btn:active {
     position: absolute;
     bottom: -100%;
     left: 0;
-    background-color: #00009C;
+    background-color: #90510a;
     color: #fff;
     height: 45px;
     width: 100%;
