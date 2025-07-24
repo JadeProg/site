@@ -1,0 +1,267 @@
+/* Tipografia escrita à mão */
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+body {
+  background-color: #fef7ed;
+  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  background-repeat: repeat;
+  color: #111;
+  font-family: 'Architects Daughter', cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 30px;
+  margin: 0;
+  min-height: 100vh;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 5px;
+  width: 100%;
+  max-width: 300px;
+}
+
+p.description {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.1rem;
+  color: #222;
+  margin: 12px 0 24px;
+  max-width: 600px;
+  line-height: 1.6;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.progress-wrapper {
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+#progressContainer {
+  position: relative;
+  background-color: #cfcfcf;
+  border: 2px solid #111;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#intelligenceBar {
+  height: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  line-height: 24px;
+  font-size: 0.9rem;
+  width: 10%;
+  transition: width 0.3s ease;
+  padding-left: 6px;
+  padding-right: 24px; /* espaço reservado para a imagem */
+  box-sizing: border-box;
+}
+
+#resetLearningBtn {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  cursor: default !important;
+  transition: none !important;
+  pointer-events: auto;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border: 3px solid #000;
+  font-size: 2.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+
+.cell:hover {
+  transform: scale(1.05);
+}
+
+/* ESTILO DA MENSAGEM*/
+#message {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #111;
+  line-height: 1.4;
+  
+  /* Mantém a estabilidade do layout para não empurrar o tabuleiro */
+  min-height: 4.5em; /* <-- AUMENTADO DE 3.5em PARA 5em */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Linhas para corrigir a quebra de linha */
+  width: 100%; 
+  max-width: 450px;
+  margin: 0 auto 15px auto; 
+  padding: 15px 20px;
+  box-sizing: border-box;
+}
+
+/* Botão de Jogar revertido ao estado original */
+#resetBtn {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Architects Daughter', cursive;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#resetBtn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+#chartContainer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  background-color: #fafafa;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 12px;
+  padding: 0 20px;
+}
+
+#chartContainer.show {
+  max-height: 800px;
+  padding: 20px;
+  border: 2px solid #111;
+}
+
+/* Animação opcional */
+.neuron-burst {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background-color: #000;
+  border-radius: 50%;
+  opacity: 0;
+  animation: burstOut 0.6s ease-out forwards;
+}
+
+@keyframes burstOut {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  #board {
+    grid-template-columns: repeat(3, 22vw);
+    gap: 3vw;
+  }
+
+  .cell {
+    width: 22vw;
+    height: 22vw;
+    font-size: 2rem;
+  }
+
+  #resetBtn {
+    width: 80%;
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  #chartContainer {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    border-radius: 0;
+    max-height: 0;
+  }
+
+  #chartContainer.show {
+    padding: 20px;
+    border: 2px solid #111;
+    background-color: #fafafa;
+    border-radius: 12px;
+    max-height: 800px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    border-bottom: none
+  }
+
+  p.description {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
+}
+/* Estilo para o texto de "ver estatísticas" */
+#statsText {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 0.7rem;
+  color: #555;
+  margin-top: -5px;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+  cursor: default;
+}
+
+/* --- EFEITO DE HOVER PARA O ÍCONE DO GRÁFICO --- */
+
+#toggleChart {
+  margin-top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
+  /* A transição agora suaviza a opacidade e o tamanho */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#toggleChart:hover {
+  opacity: 0.6; /* Fica mais transparente ao passar o mouse */
+  transform: scale(1.1); /* Aumenta um pouco para dar feedback */
+}
+
+#arrowIcon.rotated {
+  transform: rotate(180deg);
+}

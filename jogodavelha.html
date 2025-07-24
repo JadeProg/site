@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>X|0 [memória de máquina]</title>
+  <link rel="stylesheet" href="css/jogodavelha.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="ia-log" style="margin-top: 20px; color: #aaa; font-size: 0.9rem;"></div>
+  <h1>X|0 [memória de máquina]</h1>
+  <p class="description">Jogue contra uma IA que aprende com você. A cada partida, ela evolui.</p>
+
+  <div class="progress-wrapper">
+    <div id="progressContainer">
+      <div id="intelligenceBar">10%</div>
+      <img
+        id="resetLearningBtn"
+        src="img/reiniciar.png"
+        alt="Resetar Aprendizado"
+        title="Resetar Aprendizado"
+        onclick="resetLearning()"
+      />
+    </div>
+  </div>
+
+  <div class="character-container">
+    <img id="velhinha" src="/img/velhinha.png" alt="Velhinha" style="display: block; width: 120px; margin: 20px auto 10px;">
+    <div id="message"></div>
+  </div>
+
+  <div id="board"></div>
+  <button onclick="resetGame()" id="resetBtn">Jogar</button>
+  <p></p>
+
+  <div id="toggleChart" onclick="toggleChartVisibility()" style="cursor: pointer; font-size: 24px; margin-top: 10px;">
+    <span id="arrowIcon">▼</span>
+  </div>
+  <p id="statsText" style="display: none;">Ver Estatísticas</p>
+
+  <div id="chartContainer">
+    <canvas id="chartIA"></canvas>
+  </div>
+
+  <script src="js/jogodavelha.js"></script>
+</body>
+</html>
