@@ -176,11 +176,11 @@ function endGame(message) {
 
   const aiMascot = document.getElementById('velhinha');
   if (message.includes("Você venceu!")) {
-    aiMascot.src = "/img/velhinhaperde.png";
+    aiMascot.src = "img/velhinhaperde.png";
   } else if (message.includes("Vovó venceu!")) {
-    aiMascot.src = "/img/velhinhaganha.png";
+    aiMascot.src = "img/velhinhaganha.png";
   } else {
-    aiMascot.src = "/img/velhinha.png";
+    aiMascot.src = "img/velhinha.png";
   }
 
   scrollToButton();
@@ -194,7 +194,7 @@ function resetGame() {
   // mensagem de início de partida
   document.getElementById('message').textContent = "Faça sua jogada.";
   
-  document.getElementById('velhinha').src = "/img/velhinha.png";
+  document.getElementById('velhinha').src = "img/velhinha.png";
   document.getElementById('chartContainer').classList.remove('show');
   document.getElementById('toggleChart').style.display = 'none';
   document.getElementById('resetBtn').style.display = 'none';
