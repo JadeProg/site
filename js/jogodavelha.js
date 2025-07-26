@@ -32,15 +32,31 @@ function getBestMove(board, k = 3) {
   if (isFirstPlay && board[4] === 0 && learningLevel >= 100) return 4;
 
   if (learningLevel >= 100) {
+    // 1. Tenta vencer
     const winMove = checkThreat(board, -1);
     if (winMove !== null) return winMove;
+    
+    // 2. Tenta bloquear o jogador
     const blockMove = checkThreat(board, 1);
     if (blockMove !== null) return blockMove;
+    
+    // 3. Pega o centro se estiver livre
     if (board[4] === 0) return 4;
+
+    // 4. (LÓGICA CORRIGIDA) Prioriza jogar nos lados (em forma de cruz)
+    const sides = [1, 3, 5, 7].filter((i) => board[i] === 0);
+    if (sides.length > 0) {
+      return sides[Math.floor(Math.random() * sides.length)];
+    }
+
+    // 5. (FALLBACK) Se não houver lados, joga nos cantos
     const corners = [0, 2, 6, 8].filter((i) => board[i] === 0);
-    if (corners.length > 0) return corners[Math.floor(Math.random() * corners.length)];
+    if (corners.length > 0) {
+      return corners[Math.floor(Math.random() * corners.length)];
+    }
   }
 
+  // A lógica de aprendizado com KNN para níveis < 100% continua a mesma
   if (aiMoves.length >= 5) {
     const block = checkThreat(board, 1);
     if (block !== null) return block;
