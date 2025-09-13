@@ -1,4 +1,4 @@
-# 🌐 Site Pessoal – JadeProg
+<h1 align="center"># 🌐 Site Pessoal – JadeProg
 <p align="center">
   <img src="img/jade.gif" alt="Demonstração do site" width="300"/>
 </p>
