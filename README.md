@@ -45,7 +45,6 @@ O site está disponível no link abaixo:
 ```bash
 # 1. Baixe ou clone este repositório
 git clone https://github.com/JadeProg/site.git
-cd site
 
 # 2. Abra o arquivo index.html diretamente no navegador
 
