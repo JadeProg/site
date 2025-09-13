@@ -1,10 +1,13 @@
-<h1 align="center"># 🌐 Site Pessoal – JadeProg
+<h1 align="center">🌐 Site Pessoal – JadeProg</h1>
+
 <p align="center">
   <img src="img/jade.gif" alt="Demonstração do site" width="300"/>
 </p>
 
-Bem-vindo ao repositório do meu [site pessoal](https://jadeprog.github.io/site/)!  
-Esse projeto é um espaço para compartilhar minha trajetória, portfólio e aprendizados na área de tecnologia.
+<p align="center">
+  Bem-vindo ao repositório do meu <a href="https://jadeprog.github.io/site/">site pessoal</a>! <br>
+  Esse projeto é um espaço para compartilhar minha trajetória, portfólio e aprendizados na área de tecnologia.
+</p>
 
 ---
 
