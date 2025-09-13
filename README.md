@@ -1,4 +1,7 @@
 # 🌐 Site Pessoal – JadeProg
+<p align="center">
+  <img src="img/jade.gif" alt="Demonstração do site" width="300"/>
+</p>
 
 Bem-vindo ao repositório do meu [site pessoal](https://jadeprog.github.io/site/)!  
 Esse projeto é um espaço para compartilhar minha trajetória, portfólio e aprendizados na área de tecnologia.
