@@ -33,7 +33,7 @@ Este site tem como objetivo:
 
 ---
 
-## 🚀 Como acessar
+## 🔍 Como acessar
 O site está disponível no link abaixo:  
 👉 [jadeprog.github.io/site](https://jadeprog.github.io/site/)
 
